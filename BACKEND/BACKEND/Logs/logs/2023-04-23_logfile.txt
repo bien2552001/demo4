@@ -1,0 +1,158 @@
+2023-04-23 16:44:33.4229 INFO ========>>>>>>> POST successful
+2023-04-23 16:45:04.4712 INFO ========>>>>>>> POST successful
+2023-04-23 16:52:09.2670 ERROR Something went wrong: System.FormatException: Element 'Date' does not match any field or property of class BACKEND.Entities.Model.Data_Mo.PZEM017.PZEM017_Model.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperation[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](IClientSessionHandle session, FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass46_0`1.<FindSync>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.FindFluent`2.ToCursor(CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToList[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at BACKEND.Repository.Data_Re.PZEM017_Repository.GetAllAsync(PZEM017_DataShapping_Dto repuestShapping, Nullable`1 start, Nullable`1 end) in D:\DATNK15\BACKEND\BACKEND\Repository\Data_Re\PZEM017_Repository.cs:line 70
+   at BACKEND.Controllers.Data_Co.PZEM017Controller.GetAllAsync(PZEM017_DataShapping_Dto repuestShapping, Nullable`1 start, Nullable`1 end) in D:\DATNK15\BACKEND\BACKEND\Controllers\Data_Co\PZEM017Controller.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-23 16:59:41.5007 INFO ========>>>>>>> POST successful
+2023-04-23 17:10:38.0792 INFO ========>>>>>>> POST successful
+2023-04-23 17:10:57.6103 INFO ========>>>>>>> POST successful
+2023-04-23 17:14:58.7360 INFO ========>>>>>>> POST successful
+2023-04-23 17:18:20.7378 INFO ========>>>>>>> POST successful
+2023-04-23 17:18:20.7667 INFO ========>>>>>>> POST successful
+2023-04-23 17:18:32.7772 INFO ========>>>>>>> POST successful
+2023-04-23 17:18:32.8124 INFO ========>>>>>>> POST successful
+2023-04-23 17:19:46.9744 INFO ========>>>>>>> POST successful
+2023-04-23 17:19:47.1004 ERROR  ============>>>>>>>>   Object sent from client is null. Controller: PZEM017, action: CreateAsync
+2023-04-23 17:19:59.1318 INFO ========>>>>>>> POST successful
+2023-04-23 17:19:59.1546 ERROR  ============>>>>>>>>   Object sent from client is null. Controller: PZEM017, action: CreateAsync
+2023-04-23 17:20:11.1773 INFO ========>>>>>>> POST successful
+2023-04-23 17:20:11.2043 ERROR  ============>>>>>>>>   Object sent from client is null. Controller: PZEM017, action: CreateAsync
+2023-04-23 17:26:13.8191 INFO ========>>>>>>> POST successful
+2023-04-23 17:26:25.8702 INFO ========>>>>>>> POST successful
+2023-04-23 17:26:37.9052 INFO ========>>>>>>> POST successful
+2023-04-23 18:03:45.3781 INFO ========>>>>>>> POST successful
+2023-04-23 18:03:57.5160 INFO ========>>>>>>> POST successful
+2023-04-23 18:04:09.5274 INFO ========>>>>>>> POST successful
+2023-04-23 18:04:21.4916 INFO ========>>>>>>> POST successful
+2023-04-23 18:06:39.2380 INFO ========>>>>>>> POST successful
+2023-04-23 18:06:51.3601 INFO ========>>>>>>> POST successful
+2023-04-23 18:07:03.3937 INFO ========>>>>>>> POST successful
+2023-04-23 18:07:15.4007 INFO ========>>>>>>> POST successful
+2023-04-23 18:07:27.3954 INFO ========>>>>>>> POST successful
+2023-04-23 18:07:39.3910 INFO ========>>>>>>> POST successful
+2023-04-23 18:07:51.3836 INFO ========>>>>>>> POST successful
+2023-04-23 18:08:03.4427 INFO ========>>>>>>> POST successful
+2023-04-23 19:05:24.6417 ERROR Something went wrong: System.FormatException: Element 'Gio' does not match any field or property of class BACKEND.Entities.Model.Data_Mo.PZEM017.PZEM017_Model.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperation[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](IClientSessionHandle session, FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass46_0`1.<FindSync>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.FindFluent`2.ToCursor(CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToList[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at BACKEND.Repository.Data_Re.PZEM017_Repository.GetAllAsync(PZEM017_DataShapping_Dto repuestShapping, PZEM017_FillterTime_Dto fillter) in D:\DATNK15\BACKEND\BACKEND\Repository\Data_Re\PZEM017_Repository.cs:line 74
+   at BACKEND.Controllers.Data_Co.PZEM017Controller.GetAllAsync(PZEM017_DataShapping_Dto repuestShapping, PZEM017_FillterTime_Dto fillterTime) in D:\DATNK15\BACKEND\BACKEND\Controllers\Data_Co\PZEM017Controller.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-23 19:22:24.6884 ERROR Something went wrong: AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Test_Post_Dto -> PZEM017_Model
+BACKEND.Entities.DTO.DataDto.DTSU666.Test_Post_Dto -> BACKEND.Entities.Model.Data_Mo.PZEM017.PZEM017_Model
+   at lambda_method39(Closure , Object , PZEM017_Model , ResolutionContext )
+   at BACKEND.Controllers.Data_Co.PZEM017Controller.Create1Async(Test_Post_Dto dataDto) in D:\DATNK15\BACKEND\BACKEND\Controllers\Data_Co\PZEM017Controller.cs:line 55
+   at lambda_method34(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-23 19:23:16.6952 INFO ========>>>>>>> POST successful
+2023-04-23 19:24:27.4150 INFO ========>>>>>>> POST successful
+2023-04-23 19:29:18.2536 INFO ========>>>>>>> POST successful
+2023-04-23 19:31:25.0503 INFO ========>>>>>>> POST successful
+2023-04-23 19:33:09.6273 INFO ========>>>>>>> POST successful
+2023-04-23 19:37:26.0788 INFO ========>>>>>>> POST successful
+2023-04-23 19:40:03.0531 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[BACKEND.Entities.DTO.DataDto.PZEM017.Test_Dto]' to type 'System.Collections.Generic.IEnumerable`1[BACKEND.Entities.Model.Data_Mo.PZEM017.PZEM017_Model]'.
+   at BACKEND.Controllers.Data_Co.PZEM017Controller.GetSensorDataByDay(DateTime date) in D:\DATNK15\BACKEND\BACKEND\Controllers\Data_Co\PZEM017Controller.cs:line 40
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-23 20:10:37.9866 INFO ========>>>>>>> POST successful
+2023-04-23 23:15:16.1292 INFO ========>>>>>>> POST successful
+2023-04-23 23:15:35.2429 INFO ========>>>>>>> POST successful
+2023-04-23 23:25:20.1729 INFO ========>>>>>>> POST successful
+2023-04-23 23:25:54.3016 INFO ========>>>>>>> POST successful
+2023-04-23 23:27:31.7108 INFO ========>>>>>>> POST successful
+2023-04-23 23:29:34.3494 INFO ========>>>>>>> POST successful
+2023-04-23 23:29:39.0796 INFO ========>>>>>>> POST successful
+2023-04-23 23:37:14.5994 INFO ========>>>>>>> POST successful
+2023-04-23 23:40:20.5952 INFO ========>>>>>>> POST successful
+2023-04-23 23:40:46.8471 INFO ========>>>>>>> POST successful
+2023-04-23 23:41:30.7882 INFO ========>>>>>>> POST successful
+2023-04-23 23:43:21.4564 INFO ========>>>>>>> POST successful
+2023-04-23 23:44:29.9290 INFO ========>>>>>>> POST successful
+2023-04-23 23:44:42.8105 INFO ========>>>>>>> POST successful
+2023-04-23 23:55:01.8767 INFO ========>>>>>>> POST successful
+2023-04-23 23:55:55.0174 INFO ========>>>>>>> POST successful
+2023-04-23 23:57:14.3287 INFO ========>>>>>>> POST successful
+2023-04-23 23:58:17.4837 INFO ========>>>>>>> POST successful
+2023-04-23 23:58:25.2845 INFO ========>>>>>>> POST successful
+2023-04-23 23:58:31.6849 INFO ========>>>>>>> POST successful
+2023-04-23 23:58:35.0536 INFO ========>>>>>>> POST successful

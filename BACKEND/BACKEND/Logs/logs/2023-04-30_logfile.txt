@@ -1,0 +1,127 @@
+2023-04-30 00:25:49.8173 INFO ========>>>>>>> POST successful
+2023-04-30 00:25:50.0062 INFO ========>>>>>>> POST successful
+2023-04-30 00:26:22.1886 INFO ========>>>>>>> POST successful
+2023-04-30 00:26:22.2440 INFO ========>>>>>>> POST successful
+2023-04-30 00:26:54.4347 INFO ========>>>>>>> POST successful
+2023-04-30 00:26:54.4901 INFO ========>>>>>>> POST successful
+2023-04-30 00:27:26.5541 INFO ========>>>>>>> POST successful
+2023-04-30 00:27:26.6005 INFO ========>>>>>>> POST successful
+2023-04-30 00:54:10.8320 INFO ========>>>>>>> POST successful
+2023-04-30 00:54:11.1305 INFO ========>>>>>>> POST successful
+2023-04-30 00:54:43.3311 INFO ========>>>>>>> POST successful
+2023-04-30 00:54:43.3843 INFO ========>>>>>>> POST successful
+2023-04-30 00:55:15.5291 INFO ========>>>>>>> POST successful
+2023-04-30 00:55:15.5769 INFO ========>>>>>>> POST successful
+2023-04-30 00:55:47.6219 INFO ========>>>>>>> POST successful
+2023-04-30 00:55:47.6636 INFO ========>>>>>>> POST successful
+2023-04-30 00:56:19.8007 INFO ========>>>>>>> POST successful
+2023-04-30 00:56:19.8535 INFO ========>>>>>>> POST successful
+2023-04-30 00:59:45.3801 INFO ========>>>>>>> POST successful
+2023-04-30 00:59:46.5604 INFO ========>>>>>>> POST successful
+2023-04-30 00:59:47.8828 INFO ========>>>>>>> POST successful
+2023-04-30 00:59:49.9982 INFO ========>>>>>>> POST successful
+2023-04-30 09:13:52.9714 ERROR Something went wrong: System.FormatException: An error occurred while deserializing the Uab property of class BACKEND.Entities.Model.Data_Mo.DTSU666.DTSU666_Model: Truncation resulted in data loss.
+ ---> MongoDB.Bson.TruncationException: Truncation resulted in data loss.
+   at MongoDB.Bson.Serialization.Options.RepresentationConverter.ToSingle(Double value)
+   at MongoDB.Bson.Serialization.Serializers.SingleSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperation[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](IClientSessionHandle session, FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass46_0`1.<FindSync>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.FindFluent`2.ToCursor(CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToList[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at BACKEND.Repository.Data_Re.DTSU666_Repository.GetAllAsync(DTSU666_DataShapping_Dto repuestShapping, Nullable`1 start, Nullable`1 end) in D:\DATNK15\BACKEND\BACKEND\Repository\Data_Re\DTSU666_Repository.cs:line 49
+   at BACKEND.Controllers.Data_Co.DTSU666Controller.GetAllAsync(DTSU666_DataShapping_Dto repuestShapping, Nullable`1 start, Nullable`1 end) in D:\DATNK15\BACKEND\BACKEND\Controllers\Data_Co\DTSU666Controller.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-30 09:15:21.8530 INFO ========>>>>>>> POST successful
+2023-04-30 09:15:37.2836 ERROR Something went wrong: System.FormatException: An error occurred while deserializing the Uab property of class BACKEND.Entities.Model.Data_Mo.DTSU666.DTSU666_Model: Truncation resulted in data loss.
+ ---> MongoDB.Bson.TruncationException: Truncation resulted in data loss.
+   at MongoDB.Bson.Serialization.Options.RepresentationConverter.ToSingle(Double value)
+   at MongoDB.Bson.Serialization.Serializers.SingleSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperation[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](IClientSessionHandle session, FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass46_0`1.<FindSync>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.FindFluent`2.ToCursor(CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToList[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at BACKEND.Repository.Data_Re.DTSU666_Repository.GetAllAsync(DTSU666_DataShapping_Dto repuestShapping, Nullable`1 start, Nullable`1 end) in D:\DATNK15\BACKEND\BACKEND\Repository\Data_Re\DTSU666_Repository.cs:line 49
+   at BACKEND.Controllers.Data_Co.DTSU666Controller.GetAllAsync(DTSU666_DataShapping_Dto repuestShapping, Nullable`1 start, Nullable`1 end) in D:\DATNK15\BACKEND\BACKEND\Controllers\Data_Co\DTSU666Controller.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-30 09:29:31.3893 INFO ========>>>>>>> POST successful
+2023-04-30 09:29:31.5839 INFO ========>>>>>>> POST successful
+2023-04-30 09:30:03.7087 INFO ========>>>>>>> POST successful
+2023-04-30 09:30:03.7597 INFO ========>>>>>>> POST successful
+2023-04-30 09:30:35.8329 INFO ========>>>>>>> POST successful
+2023-04-30 09:30:35.8942 INFO ========>>>>>>> POST successful
+2023-04-30 09:31:08.0205 INFO ========>>>>>>> POST successful
+2023-04-30 09:31:08.0718 INFO ========>>>>>>> POST successful
+2023-04-30 09:31:40.2118 INFO ========>>>>>>> POST successful
+2023-04-30 09:31:40.2574 INFO ========>>>>>>> POST successful
+2023-04-30 09:32:12.3947 INFO ========>>>>>>> POST successful
+2023-04-30 09:32:12.4565 INFO ========>>>>>>> POST successful
+2023-04-30 09:32:44.6432 INFO ========>>>>>>> POST successful
+2023-04-30 09:32:44.6912 INFO ========>>>>>>> POST successful
+2023-04-30 09:33:16.8821 INFO ========>>>>>>> POST successful
+2023-04-30 09:33:16.9327 INFO ========>>>>>>> POST successful
+2023-04-30 09:33:49.0178 INFO ========>>>>>>> POST successful
+2023-04-30 09:33:49.0750 INFO ========>>>>>>> POST successful
+2023-04-30 09:34:21.3004 INFO ========>>>>>>> POST successful
+2023-04-30 09:34:21.3557 INFO ========>>>>>>> POST successful
+2023-04-30 09:34:53.4061 INFO ========>>>>>>> POST successful
+2023-04-30 09:34:53.4555 INFO ========>>>>>>> POST successful
+2023-04-30 09:35:25.5706 INFO ========>>>>>>> POST successful
+2023-04-30 09:35:25.6146 INFO ========>>>>>>> POST successful

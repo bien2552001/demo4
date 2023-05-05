@@ -1,0 +1,411 @@
+/*--------------------------------------------------------------
+  # Dashboard
+  --------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------Thẻ Chung---------------------------------------*/
+
+
+
+/*----------------------------------------------------Hết Thẻ Chung----------------------------------------*/
+
+
+
+
+/*----------------------------------------------------Thẻ To day ---------------------------------------*/
+/*Hang 1*/
+.row1 {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+  .row1 .cot1_1 {
+  }
+
+/*Phần button*/
+.buttonwrapper {
+  border: none;
+  margin: 0px;
+  /*margin-bottom: 10px;*/
+  list-style: none;
+  display: inline-flex;
+  width: auto;
+  border-radius: 20px;
+  /*font-family: "Nunito", sans-serif;*/
+  font-weight: 100;
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+  .buttonwrapper .nav-link {
+    border: none;
+    display: block;
+    float: left;
+    margin-left: 15px;
+    height: 30px;
+    width: auto;
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+    padding: 5px 12px;
+    margin-bottom: 0;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+    .buttonwrapper .nav-link.active {
+      background-color: #87908b;
+    }
+
+    .buttonwrapper .nav-link:first-child {
+      margin-left: 0;
+    }
+
+    .buttonwrapper .nav-link:hover {
+      background-color: #87908b;
+      border-radius: 30px;
+    }
+
+/*------------------------------------------------*/
+
+
+.cot1_2 {
+  text-align: center;
+  font-weight: 100;
+  font-size: 22px;
+}
+
+.cot1_3 {
+  font-weight: 100;
+  font-size: 18px;
+  text-align: end;
+  top: 50%;
+}
+
+
+
+
+
+/*----------------Nội dung dashboard-----------*/
+/*-------------DTSU666---------*/
+/*Tiễu đêf*/
+.tieude {
+  background-color: #1f1f1f;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 25px;
+  padding: 5px;
+  padding: 0;
+}
+
+.tieude1 {
+  background-color: #1f1f1f;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  border-top-left-radius: 3px;
+}
+
+/*Điện áp pha*/
+.td_upha {
+  background-color: #121212;
+  text-align: center;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #dedf28;
+  padding: 5px;
+}
+
+.pzem_upha {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  padding: 3px;
+}
+
+  .pzem_upha span {
+    color: #a2e3ef;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    font-size: 10px;
+  }
+/*Diện áp dây*/
+.td_uday {
+  background-color: #121212;
+  text-align: center;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #ef5151;
+  padding: 5px;
+}
+
+.pzem_uday {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  padding: 3px;
+}
+
+  .pzem_uday span {
+    color: #a2e3ef;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    font-size: 10px;
+  }
+/*Dòng điện pha*/
+.td_ipha {
+  background-color: #121212;
+  text-align: center;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #1ce636;
+  padding: 5px;
+}
+
+.pzem_ipha {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  padding: 3px;
+}
+
+  .pzem_ipha span {
+    color: #a2e3ef;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    font-size: 10px;
+  }
+
+
+/*Công suất tiêu thụ pha*/
+.td_ppha {
+  background-color: #121212;
+  text-align: center;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #d363e7;
+  padding: 5px;
+}
+
+.pzem_ppha {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  padding: 3px;
+}
+
+  .pzem_ppha span {
+    color: #a2e3ef;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    font-size: 10px;
+  }
+
+/*Công suất phản kháng pha*/
+.td_qpha {
+  background-color: #121212;
+  text-align: center;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #ed8d5b;
+  padding: 5px;
+}
+
+.pzem_qpha {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  padding: 3px;
+}
+
+  .pzem_qpha span {
+    color: #a2e3ef;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+  }
+
+/*Hệ số công suất pha*/
+.td_cospha {
+  background-color: #121212;
+  text-align: center;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #5578ee;
+  padding: 5px;
+}
+
+.pzem_cospha {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  padding: 3px;
+}
+
+  .pzem_cospha span {
+    color: #a2e3ef;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+  }
+
+/*Tần số*/
+
+.pzem_hz {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 35px;
+  padding: 9px;
+}
+/*Công suất phản kháng Q*/
+.td_q {
+  background-color: #121212;
+  text-align: center;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #ed8d5b;
+  padding: 5px;
+}
+
+.pzem_q {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  padding: 3px;
+}
+
+  .pzem_q span {
+    color: #a2e3ef;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+  }
+/*Công suất tổng*/
+
+.td_tong {
+  background-color: #121212;
+  text-align: center;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #5578ee;
+  padding: 5px;
+}
+
+.pzem_tong {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  padding: 3px;
+}
+
+  .pzem_tong span {
+    color: #a2e3ef;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+  }
+
+/*----------------Bảng Pzem-----------*/
+/*--------Điện áp DC---------*/
+.pzem_vdc {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 35px;
+  padding: 9px;
+}
+/*--------Dòng điện DC---------*/
+.pzem_idc {
+  background-color: #121212;
+  color: #a2e3ef;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+  font-size: 35px;
+  padding: 9px;
+}
+/*------------------------------------------------*/
+
+/*----------------------------------------------------Hết Thẻ To day----------------------------------------*/
+
+
+
+/*----------------------------------------------------Thẻ Last Week---------------------------------------*/
+.dap-today {
+  background-color: #191919;
+}
+/*----------------------------------------------------Hết Thẻ Last Week----------------------------------------*/
+/*----------------------------------------------------Thẻ Last Month---------------------------------------*/
+/*----------------------------------------------------Hết Thẻ Last Month----------------------------------------*/
+/*----------------------------------------------------Thẻ Custom---------------------------------------*/
+/*-----------------Hàng 1---------------*/
+.custom_col1 {
+  /*background: #ef5151;*/
+}
+/*.bangdemo1{
+    font-size:8px;
+}*/
+
+.table {
+  /*table-layout: fixed;
+  width: 100%;*/
+  font-size: 10px;
+}
+/*-----------------Hết Hàng 1---------------*/
+
+
+
+/*----------------------------------------------------Hết Thẻ Custom----------------------------------------*/
+
+

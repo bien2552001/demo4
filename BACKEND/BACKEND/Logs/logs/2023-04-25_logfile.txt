@@ -1,0 +1,79 @@
+2023-04-25 00:00:44.6599 INFO ========>>>>>>> POST successful
+2023-04-25 00:00:51.7346 ERROR Something went wrong: System.FormatException: Element 'FormattedDate' does not match any field or property of class BACKEND.Entities.Model.Data_Mo.PZEM017.PZEM017_Model.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at BACKEND.Repository.Data_Re.PZEM017_Repository.GetAllAsync(PZEM017_DataShapping_Dto repuestShapping, PZEM017_FillterTime_Dto fillter) in D:\DATNK15\BACKEND\BACKEND\Repository\Data_Re\PZEM017_Repository.cs:line 60
+   at BACKEND.Controllers.Data_Co.PZEM017Controller.GetAllAsync(PZEM017_DataShapping_Dto repuestShapping, PZEM017_FillterTime_Dto fillterTime) in D:\DATNK15\BACKEND\BACKEND\Controllers\Data_Co\PZEM017Controller.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-25 00:02:01.1900 INFO ========>>>>>>> POST successful
+2023-04-25 00:02:06.2059 INFO ========>>>>>>> POST successful
+2023-04-25 00:17:39.4730 INFO ========>>>>>>> POST successful
+2023-04-25 00:17:46.8278 INFO ========>>>>>>> POST successful
+2023-04-25 00:19:25.7360 INFO ========>>>>>>> POST successful
+2023-04-25 19:52:48.9156 INFO ========>>>>>>> POST successful
+2023-04-25 19:52:49.0653 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:01.1439 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:01.1826 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:13.3123 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:13.3535 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:25.4534 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:25.4938 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:37.6120 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:37.6606 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:49.7436 INFO ========>>>>>>> POST successful
+2023-04-25 19:53:49.8267 INFO ========>>>>>>> POST successful
+2023-04-25 19:54:01.8882 INFO ========>>>>>>> POST successful
+2023-04-25 19:54:01.9235 INFO ========>>>>>>> POST successful
+2023-04-25 19:54:13.9821 INFO ========>>>>>>> POST successful
+2023-04-25 19:54:14.0702 INFO ========>>>>>>> POST successful
+2023-04-25 19:54:26.1424 INFO ========>>>>>>> POST successful
+2023-04-25 19:54:26.1820 INFO ========>>>>>>> POST successful
+2023-04-25 20:13:39.8955 INFO ========>>>>>>> POST successful
+2023-04-25 20:13:40.1657 INFO ========>>>>>>> POST successful
+2023-04-25 20:13:52.3601 INFO ========>>>>>>> POST successful
+2023-04-25 20:13:52.4122 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:04.5685 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:04.6283 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:16.8331 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:16.8757 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:33.9845 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:34.0205 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:46.1157 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:46.1711 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:58.2959 INFO ========>>>>>>> POST successful
+2023-04-25 20:14:58.3513 INFO ========>>>>>>> POST successful
+2023-04-25 20:15:10.4746 INFO ========>>>>>>> POST successful
+2023-04-25 20:15:10.5071 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:00.7755 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:00.8743 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:12.9826 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:13.0255 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:25.1138 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:25.1533 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:37.3190 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:37.3638 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:49.4577 INFO ========>>>>>>> POST successful
+2023-04-25 20:57:49.4871 INFO ========>>>>>>> POST successful
+2023-04-25 20:58:01.5890 INFO ========>>>>>>> POST successful
+2023-04-25 20:58:01.6366 INFO ========>>>>>>> POST successful
+2023-04-25 20:58:13.7796 INFO ========>>>>>>> POST successful
+2023-04-25 20:58:13.8201 INFO ========>>>>>>> POST successful
