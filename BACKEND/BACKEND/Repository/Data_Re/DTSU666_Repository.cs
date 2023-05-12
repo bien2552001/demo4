@@ -5,6 +5,7 @@ using System;
 using BACKEND.Entities.Model.Data_Mo.DTSU666;
 using BACKEND.Interface.IData.IDTSU666;
 using BACKEND.Entities.DTO.DataDto.DTSU666;
+using MongoDB.Bson;
 
 namespace BACKEND.Repository.Data_Re
 {
@@ -18,9 +19,7 @@ namespace BACKEND.Repository.Data_Re
 
         private readonly IMongoCollection<DTSU666_Model> currentCollection; // Tạo bộ sưu tập từ lớp Item
 
-        public DTSU666_Repository()
-        {
-        }
+
 
         public DTSU666_Repository(IMongoClient mongoClient)
         {
@@ -29,6 +28,9 @@ namespace BACKEND.Repository.Data_Re
             currentCollection = database.GetCollection<DTSU666_Model>(collectionName);// Tham chiếu đến tên bộ sưu tập 
 
         }
+
+
+
 
         //GET
         public async Task<IEnumerable<DTSU666_Model>> GetAllAsync(DTSU666_DataShapping_Dto repuestShapping, DTSU666_FillterTime_Dto dtsufilterDate)

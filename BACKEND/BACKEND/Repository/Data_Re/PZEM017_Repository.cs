@@ -1,16 +1,11 @@
-﻿using BACKEND.Entities.DTO.DataDto.DTSU666;
-using BACKEND.Entities.Model.Data_Mo.DTSU666;
-using BACKEND.Interface.IData.IDTSU666;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
 using BACKEND.Interface.IData.IPZEM017;
 using BACKEND.Entities.Model.Data_Mo.PZEM017;
 using BACKEND.Entities.DTO.DataDto.PZEM017;
-using NLog.Filters;
-using System.Globalization;
-using System.Collections;
+
 
 namespace BACKEND.Repository.Data_Re
 {

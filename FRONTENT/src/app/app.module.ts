@@ -20,8 +20,6 @@ import { PostComponent } from './components/table-restapi/post/post.component';
 import { TablefilterComponent } from './components/table-restapi/tablefilter/tablefilter.component';
 import { DataTablesModule } from 'angular-datatables';
 import { ConnectionServiceModule } from 'ng-connection-service';
-import { DaterangerpickerComponent } from './pages/dashboard/daterangerpicker/daterangerpicker.component';
-import { Dtsu666DienapphaTodayComponent } from './pages/dashboard/today/dtsu666-dienappha-today/dtsu666-dienappha-today.component';
 import { Dtsu666UphatodayComponent } from './pages/dashboard/today/dtsu666-uphatoday/dtsu666-uphatoday.component';
 import { Dtsu666UdaytodayComponent } from './pages/dashboard/today/dtsu666-udaytoday/dtsu666-udaytoday.component';
 import { Dtsu666CosphitodayComponent } from './pages/dashboard/today/dtsu666-cosphitoday/dtsu666-cosphitoday.component';
@@ -32,6 +30,10 @@ import { Dtsu666DiennangphankhangatodayComponent } from './pages/dashboard/today
 import { Dtsu666DiennangtieuthutodayComponent } from './pages/dashboard/today/dtsu666-diennangtieuthutoday/dtsu666-diennangtieuthutoday.component';
 import { Dtsu666UphalastweekComponent } from './pages/dashboard/last week/dtsu666-uphalastweek/dtsu666-uphalastweek.component';
 import { Dtsu666IphatodayComponent } from './pages/dashboard/today/dtsu666-iphatoday/dtsu666-iphatoday.component';
+import { Pzem017DienaptodayComponent } from './pages/dashboard/today/pzem017-dienaptoday/pzem017-dienaptoday.component';
+import { Pzem017DongdientodayComponent } from './pages/dashboard/today/pzem017-dongdientoday/pzem017-dongdientoday.component';
+import { Pzem017CongsuattieuthutodayComponent } from './pages/dashboard/today/pzem017-congsuattieuthutoday/pzem017-congsuattieuthutoday.component';
+import { Pzem017DiennangtieuthutodayComponent } from './pages/dashboard/today/pzem017-diennangtieuthutoday/pzem017-diennangtieuthutoday.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +52,6 @@ import { Dtsu666IphatodayComponent } from './pages/dashboard/today/dtsu666-iphat
     TableRestapiComponent,
     PostComponent,
     TablefilterComponent,
-    DaterangerpickerComponent,
-    Dtsu666DienapphaTodayComponent,
     Dtsu666UphatodayComponent,
     Dtsu666UdaytodayComponent,
     Dtsu666CosphitodayComponent,
@@ -62,6 +62,10 @@ import { Dtsu666IphatodayComponent } from './pages/dashboard/today/dtsu666-iphat
     Dtsu666DiennangtieuthutodayComponent,
     Dtsu666UphalastweekComponent,
     Dtsu666IphatodayComponent,
+    Pzem017DienaptodayComponent,
+    Pzem017DongdientodayComponent,
+    Pzem017CongsuattieuthutodayComponent,
+    Pzem017DiennangtieuthutodayComponent,
 
   ],
   imports: [

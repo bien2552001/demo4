@@ -47,4 +47,5 @@ export class DashBoardModel {
   I1!: number;
   P1!: number;
   A1!: number;
+  Date1!: string;
 }

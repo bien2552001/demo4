@@ -11,12 +11,11 @@ import { UsersProfileComponent } from './pages/users-profile/users-profile.compo
 import { TableRestapiComponent } from './components/table-restapi/table-restapi.component';
 import { PostComponent } from './components/table-restapi/post/post.component';
 import { TablefilterComponent } from './components/table-restapi/tablefilter/tablefilter.component';
-import { DaterangerpickerComponent } from './pages/dashboard/daterangerpicker/daterangerpicker.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
-   { path: 'pages-blank', component: PagesBlankComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'pages-blank', component: PagesBlankComponent },
   { path: 'pages-contact', component: PagesContactComponent },
   { path: 'pages-error404', component: PagesError404Component },
   { path: 'pages-faq', component: PagesFaqComponent },
@@ -27,8 +26,6 @@ const routes: Routes = [
   { path: 'tablerestapi', component: TableRestapiComponent },
   { path: 'tablefilter', component: TablefilterComponent },
   { path: 'test-data', component: PostComponent },
-  { path: 'daetrangerpicker', component: DaterangerpickerComponent },
-
 ];
 
 @NgModule({

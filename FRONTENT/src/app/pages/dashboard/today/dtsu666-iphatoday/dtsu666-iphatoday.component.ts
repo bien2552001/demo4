@@ -30,6 +30,11 @@ export class Dtsu666IphatodayComponent implements OnInit {
         const ic1 = this.dtsu666_dongdienpha_today.map(data => data.Ic);
         const date1 = this.dtsu666_dongdienpha_today.map(data => data.Date);
 
+        // Tính trung bình
+        const avgArray_ia = Array.from({ length: ia1.length }, () => ia1.reduce((acc, val) => acc + val) / ia1.length);
+        const avgArray_ib = Array.from({ length: ib1.length }, () => ib1.reduce((acc, val) => acc + val) / ib1.length);
+        const avgArray_ic = Array.from({ length: ic1.length }, () => ic1.reduce((acc, val) => acc + val) / ic1.length);
+
         // Hủy Chart hiện tại (nếu có)
         const chart = Chart.getChart('dtsu666_dongdienphatoday');
         if (chart) {
@@ -48,24 +53,54 @@ export class Dtsu666IphatodayComponent implements OnInit {
                 data: ia1,
                 borderColor: 'red',
                 backgroundColor: 'red',
-                borderWidth: 1,
-                pointRadius: 1,
+                borderWidth: 0.8,
+                pointRadius: 0.8,
+                hidden: false,
+              },
+              {
+                label: 'Iatb',
+                data: avgArray_ia,
+                borderColor: 'red',
+                backgroundColor: 'red',
+                borderWidth: 1.5,
+                pointRadius: 0,
+                hidden: false,
               },
               {
                 label: 'Ib',
+                data: avgArray_ib,
+                borderColor: 'yellow',
+                backgroundColor: 'yellow',
+                borderWidth: 0.8,
+                pointRadius: 0.8,
+                hidden: true,
+              },
+              {
+                label: 'Ibtb',
                 data: ib1,
                 borderColor: 'yellow',
                 backgroundColor: 'yellow',
-                borderWidth: 1,
-                pointRadius: 1,
+                borderWidth: 1.5,
+                pointRadius: 0,
+                hidden: true,
               },
               {
                 label: 'Ic',
                 data: ic1,
                 borderColor: 'green',
                 backgroundColor: 'green',
-                borderWidth: 1,
-                pointRadius: 1,
+                borderWidth: 0.8,
+                pointRadius: 0.8,
+                hidden: true,
+              },
+              {
+                label: 'Ictb',
+                data: avgArray_ic,
+                borderColor: 'green',
+                backgroundColor: 'green',
+                borderWidth: 1.5,
+                pointRadius: 0,
+                hidden: true,
               }
             ]
           },

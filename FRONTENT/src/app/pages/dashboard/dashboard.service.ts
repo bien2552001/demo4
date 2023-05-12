@@ -27,7 +27,7 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
-  //-----------------------------------------------------------------------------------------Moment --------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------TO DAY--------------------------------------------------------------
   //---------------------------------------------------------------------DTSU66------------------------------
   //---------------Điện áp pha ----------------
   DTSU666_dienappha_today() {
@@ -78,6 +78,26 @@ export class DashboardService {
     return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=A_sum,A_imp,A_exp,Date&start=' + this.timedaya + '&end=' + this.timedayb)
   }
 
+  //---------------------------------------------------------------------PZEM017------------------------------
+  //---------------Điện áp pha ----------------
+  PZEM017_dienappha_today() {
+    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/pzem017?&Fields1=U1,Date1&Start1=' + this.timedaya + '&End1=' + this.timedayb)
+  }
+
+  //---------------Dòng điện ----------------
+  PZEM017_dongdien_today() {
+    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/pzem017?&Fields1=I1,Date1&Start1=' + this.timedaya + '&End1=' + this.timedayb)
+  }
+
+  //---------------Công suất tiêu thụ ----------------
+  PZEM017_ptieuthu_today() {
+    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/pzem017?&Fields1=P1,Date1&Start1=' + this.timedaya + '&End1=' + this.timedayb)
+  }
+
+  //---------------Điện năng tiêu thụ ----------------
+  PZEM017_atieuthu_today() {
+    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/pzem017?&Fields1=A1,Date1&Start1=' + this.timedaya + '&End1=' + this.timedayb)
+  }
 
 
 
@@ -88,70 +108,141 @@ export class DashboardService {
 
 
 
-
-
-
-  //---------------------------------------------------------------------DTSU66------------------------------
+  //---------------------------------------------------------------------------------------------Moment---------------------------------------------------------------------
+  //-------------------------------------DTSU66--------------------------------------------------------
   //---------------Điện áp pha,Điện áp dây, Dòng điện pha ----------------
   //DTSU_upha() {
   //  return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=Ua,Ub,Uc,Uab,Ubc,Uca,Ia,Ib,Ic&start=' + this.timedaya + '&end=' + this.timedayb)
   //}
 
-  DTSU_upha(date1: string, date2: string): Observable<any> {
-    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
-    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
-    const url = `${this.BaseUrl}/dtsu666?start=${startDate}&end=${endDate}`;
+  DTSU666_uimoment(): Observable<any> {
+    const startDate = moment().startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment().endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/dtsu666?&Fields=Ua,Ub,Uc,Uab,Ubc,Uca,Ia,Ib,Ic&start=${startDate}&end=${endDate}`;
     return this.http.get(url);
   }
   //---------------Công suất theo pha: p,q ; Cosphi ; Hz ----------------
-  DTSU_cs() {
-    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=Pft,Pfa,Pfb,Pfc,Qft,Qfa,Qfb,Qfc,Cosft,Cosfa,Cosfb,Cosfc,Hz&start=' + this.timedaya + '&end=' + this.timedayb)
+  DTSU666_pqphimoment(): Observable<any> {
+    const startDate = moment().startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment().endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/dtsu666?&Fields=Pft,Pfa,Pfb,Pfc,Qft,Qfa,Qfb,Qfc,Cosft,Cosfa,Cosfb,Cosfc,Hz&start=${startDate}&end=${endDate}`;
+    return this.http.get(url);
   }
   //-------------Công suất -------------------
-  DTSU_cs1() {
-    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=A_sum,A_imp,A_exp,Q1,Q2,Q3,Q4,Date&start=' + this.timedaya + '&end=' + this.timedayb)
+  DTSU666_amoment(): Observable<any> {
+    const startDate = moment().startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment().endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/dtsu666?&Fields=A_sum,A_imp,A_exp,Q1,Q2,Q3,Q4&start=${startDate}&end=${endDate}`;
+    return this.http.get(url);
   }
-
 
   //---------------------------------------------------------------------PZEM-017------------------------------
-  Pzem_da() {
-    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/pzem017?&Fields=U1&start=' + this.timedaya + '&end=' + this.timedayb)
+  // Điện áp
+  Pzem017_uipamoment(): Observable<any> {
+    const startDate = moment().startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment().endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/pzem017?&Fields1=U1,I1,P1,A1&Start1=${startDate}&End1=${endDate}`;
+    return this.http.get(url);
   }
 
-  //---------------------------------------------------------------------Tuần----------------------------------------------------
+  //---------------------------------------------------------------------Today----------------------------------------------------
 
   //---------------Điện áp pha,Điện áp dây, Dòng điện pha ----------------
   DTSU_upha_w() {
-    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=Ua,Ub,Uc,Uab,Ubc,Uca,Ia,Ib,Ic&start=' + this.timemonth + '&end=' + this.timedayb)
+    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=Ua,Ub,Uc,Uab,Ubc,Uca,Ia,Ib,Ic&start=' + this.timedaya + '&end=' + this.timedayb)
   }
   //---------------Công suất theo pha: p,q ; Cosphi ; Hz ----------------
   DTSU_cs_w() {
-    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=Pft,Pfa,Pfb,Pfc,Qft,Qfa,Qfb,Qfc,Cosft,Cosfa,Cosfb,Cosfc,Hz&start=' + this.timemonth + '&end=' + this.timedayb)
+    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=Pft,Pfa,Pfb,Pfc,Qft,Qfa,Qfb,Qfc,Cosft,Cosfa,Cosfb,Cosfc,Hz&start=' + this.timedaya + '&end=' + this.timedayb)
   }
   //-------------Công suất -------------------
   DTSU_cs1_w() {
-    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=A_sum,A_imp,A_exp,Q1,Q2,Q3,Q4&start=' + this.timemonth + '&end=' + this.timedayb)
+    return this.http.get<Array<DashBoardModel>>(this.BaseUrl + '/dtsu666?&Fields=A_sum,A_imp,A_exp,Q1,Q2,Q3,Q4&start=' + this.timedaya + '&end=' + this.timedayb)
   }
-  //---------------------------------------------------------------------------Month-------------------------------------------------------
-  GetTimemonth() {
-    return this.http.get(this.BaseUrl + '/dtsu666?start=' + this.timemonth + '&end=' + this.timedayb)
-  }
+  //---------------------------------------------------------------------------Last Week-------------------------------------------------------
+  //Biến 
+   last_1day = moment().subtract(1, 'day').format("YYYY-MM-DDTHH:mm:ss");
+   last_2day = moment().subtract(2, 'day').format("YYYY-MM-DDTHH:mm:ss");
+   last_3day = moment().subtract(3, 'day').format("YYYY-MM-DDTHH:mm:ss");
+   last_4day = moment().subtract(4, 'day').format("YYYY-MM-DDTHH:mm:ss");
+   last_5day = moment().subtract(5, 'day').format("YYYY-MM-DDTHH:mm:ss");
+   last_6day = moment().subtract(6, 'day').format("YYYY-MM-DDTHH:mm:ss");
+   last_7day = moment().subtract(7, 'day').format("YYYY-MM-DDTHH:mm:ss");
 
-  //--------------------------------------------------------The Custom-----------------------------------------------
-
-  Get21date(date1: string, date2: string): Observable<any> {
-    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
-    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
-    const url = `${this.BaseUrl}/dtsu666?start=${startDate}&end=${endDate}`;
+  //-------------------------------------DTSU666_LAST WEEK------------------------------
+  // last 1 day
+  DTSU666_last1day(): Observable<any> {
+    const startDate = moment(this.last_1day).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(this.last_1day).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/dtsu666?Fields=Ua,Ub,Uc,Ia,Ib,Ic,Pft,Pfa,Pfb,Pfc,A_sum,A_imp,A_exp,Date&start=${startDate}&end=${endDate}`;
     return this.http.get(url);
   }
 
-  //Bieu do
-
-  Bieudo_demo(date1: string, date2: string): Observable<any> {
+  //-----------------------------------------------------------------------The Custom----------------------------------------------------------
+  //-------- DTSU666-FILTER DATE----------
+  // Bảng chi tiết  
+  DTSU666_bangcustom(date1: string, date2: string): Observable<any> {
     const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
     const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
-    const url = `${this.BaseUrl}/dtsu666?start=${startDate}&end=${endDate}&Fields=Hz`;
+    const url = `${this.BaseUrl}/dtsu666?&start=${startDate}&end=${endDate}`;
+    return this.http.get(url);
+  }
+  // Điện áp pha 
+  DTSU666_dienapphacustom(date1: string, date2: string): Observable<any> {
+    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/dtsu666?Fields=Ua,Ub,Uc,Date&start=${startDate}&end=${endDate}`;
+    return this.http.get(url);
+  }
+  // Dòng điện pha 
+  DTSU666_dongienphacustom(date1: string, date2: string): Observable<any> {
+    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/dtsu666?Fields=Ia,Ib,Ic,Date&start=${startDate}&end=${endDate}`;
+    return this.http.get(url);
+  }
+  // Công suất tiêu thụ 
+  DTSU666_cstieuthucustom(date1: string, date2: string): Observable<any> {
+    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/dtsu666?Fields=Pft,Pfa,Pfb,Pfc,Date&start=${startDate}&end=${endDate}`;
+    return this.http.get(url);
+  }
+  // Điện năng tiêu thụ 
+  DTSU666_atieuthucustom(date1: string, date2: string): Observable<any> {
+    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/dtsu666?Fields=A_sum,A_imp,A_exp,Date&start=${startDate}&end=${endDate}`;
+    return this.http.get(url);
+  }
+
+  //-------- PZEM017-FILTER DATE----------
+  // Điện áp DC 
+  PZEM017_dienapDCcustom(date1: string, date2: string): Observable<any> {
+    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/pzem017?Fields=U1,Date1&Start1=${startDate}&End1=${endDate}`;
+    return this.http.get(url);
+  }
+  // Dòng điện DC 
+  PZEM017_dongdienDCcustom(date1: string, date2: string): Observable<any> {
+    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/pzem017?Fields=I1,Date1&Start1=${startDate}&End1=${endDate}`;
+    return this.http.get(url);
+  }
+  // Công suất DC 
+  PZEM017_conguatDCcustom(date1: string, date2: string): Observable<any> {
+    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/pzem017?Fields=P1,Date1&Start1=${startDate}&End1=${endDate}`;
+    return this.http.get(url);
+  }
+  // Điện năng DC 
+  PZEM017_diennangDCcustom(date1: string, date2: string): Observable<any> {
+    const startDate = moment(date1).startOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const endDate = moment(date2).endOf('day').format("YYYY-MM-DDTHH:mm:ss");
+    const url = `${this.BaseUrl}/pzem017?Fields=A1,Date1&Start1=${startDate}&End1=${endDate}`;
     return this.http.get(url);
   }
 

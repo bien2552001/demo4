@@ -1,0 +1,1 @@
+docker run -d --name DATNK15 -p 27017:27017 -v "$(pwd)/dockermongo:/data/db" -e MONGO_INITDB_ROOT_USERNAME=bien123 -e MONGO_INITDB_ROOT_PASSWORD=bien123 --restart unless-stopped mongo

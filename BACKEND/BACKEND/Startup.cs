@@ -22,13 +22,15 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using NLog;
 using System.IO;
+using System.Net;
+
 namespace BACKEND
 {
     public class Startup
     {
         public Startup(IConfiguration configuration)
         {
-            //LOGGER_Service
+            //LOGGER_config
             LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
             Configuration = configuration;
@@ -58,7 +60,11 @@ namespace BACKEND
             services.ConfigureMongoDbClient(Configuration);
             //
 
-
+            // Service PROXY
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.KnownProxies.Add(IPAddress.Parse("127.0.0.1"));
+            });
 
 
 
@@ -148,14 +154,19 @@ namespace BACKEND
             //CORS
             app.UseCors("CorsPolicy");
 
-            // CHUYỂN TIẾP TIÊU ĐÈ PROXY ĐẾN YÊU CẦU HIỆN TẠI 
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.All
-            });
-
+            //// CHUYỂN TIẾP TIÊU ĐÈ PROXY ĐẾN YÊU CẦU HIỆN TẠI 
+            //app.UseForwardedHeaders(new ForwardedHeadersOptions
+            //{
+            //    ForwardedHeaders = ForwardedHeaders.All
+            //});
+        
             app.UseRouting();
 
+            //// CHUYỂN TIẾP TIÊU ĐÈ PROXY ĐẾN YÊU CẦU HIỆN TẠI 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
 
             app.UseAuthorization();

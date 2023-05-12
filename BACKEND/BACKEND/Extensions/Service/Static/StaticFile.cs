@@ -9,14 +9,11 @@ namespace BACKEND.Extensions.Service.Static
         services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy", builder =>
-            builder.WithOrigins("http://localhost:4200")
+            builder.WithOrigins("http://localhost:4200", "http://localhost:8100")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials());
         });
-
-
-
 
         public static void ConfigureIISIntegration(this IServiceCollection services) =>
         services.Configure<IISOptions>(options =>

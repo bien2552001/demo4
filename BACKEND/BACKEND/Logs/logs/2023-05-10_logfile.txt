@@ -1,0 +1,38 @@
+2023-05-10 14:06:46.9125 INFO ========>>>>>>> POST successful
+2023-05-10 14:06:47.0413 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:07:19.1720 INFO ========>>>>>>> POST successful
+2023-05-10 14:07:19.2159 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:07:51.2512 INFO ========>>>>>>> POST successful
+2023-05-10 14:07:51.2916 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:08:23.3875 INFO ========>>>>>>> POST successful
+2023-05-10 14:08:23.4329 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:08:55.5227 INFO ========>>>>>>> POST successful
+2023-05-10 14:08:55.5641 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:09:27.6391 INFO ========>>>>>>> POST successful
+2023-05-10 14:09:27.7321 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:09:59.8307 INFO ========>>>>>>> POST successful
+2023-05-10 14:09:59.8717 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:10:31.9256 INFO ========>>>>>>> POST successful
+2023-05-10 14:10:31.9906 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:11:04.0369 INFO ========>>>>>>> POST successful
+2023-05-10 14:11:04.0791 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:11:36.0893 INFO ========>>>>>>> POST successful
+2023-05-10 14:11:36.1304 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:12:08.1614 INFO ========>>>>>>> POST successful
+2023-05-10 14:12:08.2078 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:12:40.2499 INFO ========>>>>>>> POST successful
+2023-05-10 14:12:40.2982 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:13:12.3873 INFO ========>>>>>>> POST successful
+2023-05-10 14:13:12.4375 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:13:44.4839 INFO ========>>>>>>> POST successful
+2023-05-10 14:13:44.5261 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:14:16.5678 INFO ========>>>>>>> POST successful
+2023-05-10 14:14:16.6235 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:14:48.6963 INFO ========>>>>>>> POST successful
+2023-05-10 14:14:48.7601 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:15:20.7964 INFO ========>>>>>>> POST successful
+2023-05-10 14:15:20.8404 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:15:52.8951 INFO ========>>>>>>> POST successful
+2023-05-10 14:15:52.9367 INFO ========>>>>>>> PZEM017: POST successful
+2023-05-10 14:16:24.9763 INFO ========>>>>>>> POST successful
+2023-05-10 14:16:25.0149 INFO ========>>>>>>> PZEM017: POST successful

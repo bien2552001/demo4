@@ -22,6 +22,8 @@
     <Folder Include="Extensions\User_Ex\" />
     <Folder Include="Interface\IUser\" />
     <Folder Include="Logs\" />
+    <Folder Include="dockermongo\" />
+    <Folder Include="dockermongotest1\" />
     <Folder Include="Repository\User_Re\" />
   </ItemGroup>
 

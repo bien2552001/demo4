@@ -4,14 +4,20 @@ import { DashBoardModel } from '../../dashboard.model';
 import { DashboardService } from '../../dashboard.service';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { format, subDays } from 'date-fns';
+import * as moment from 'moment';
 
 //------------------- Dùng chung tất cả biểu đồ ------------------------
 // Đăng kí 1 lần dùng cho tất cả các biểu đồ , không cần đăng kí lại ở các lớp khác 
 Chart.register(...registerables);
 Chart.register(ChartDataLabels);
 // Tất cả màu trong biểu đồ
- Chart.defaults.color = '#808080';
-//-------------------------------------------------------------------------------
+Chart.defaults.color = '#808080';
+// font trục x,y 
+Chart.defaults.font.size = 10;
+//----------------------hết-Dùng chung tất cả biểu đồ---------------------
+
+
+
 @Component({
   selector: 'app-dtsu666-uphatoday',
   templateUrl: './dtsu666-uphatoday.component.html',
@@ -22,79 +28,97 @@ export class Dtsu666UphatodayComponent implements OnInit {
   public dtsu666_dienappha_today!: Array<DashBoardModel>;
   mychart!: Chart;
 
-  
-
   constructor(private dtsu666today: DashboardService) { }
 
   ngOnInit(): void {
-    this.dtsu666_uphatoday();
+    this.dtsu666_iphatoday();
   }
-
-  private dtsu666_uphatoday() {
+  async dtsu666_iphatoday() {
 
     this.dtsu666today.DTSU666_dienappha_today().subscribe(
-
       result => {
         this.dtsu666_dienappha_today = result;
         // Trả về 1 chuỗi giá trị của từng phần tử
         const ua = this.dtsu666_dienappha_today.map(data => data.Ua);
         const ub = this.dtsu666_dienappha_today.map(data => data.Ub);
         const uc = this.dtsu666_dienappha_today.map(data => data.Uc);
-        //const date1 = this.dtsu666_dienappha_today.map(data => data.Date);
+        const date_ua = this.dtsu666_dienappha_today.map(data => data.Date);
+        // Tính trung bình
+        const avgArray_ua = Array.from({ length: ua.length }, () => ua.reduce((acc, val) => acc + val) / ua.length);
+        const avgArray_ub = Array.from({ length: ub.length }, () => ub.reduce((acc, val) => acc + val) / ub.length);
+        const avgArray_uc = Array.from({ length: uc.length }, () => uc.reduce((acc, val) => acc + val) / uc.length);
 
-        // lấy giá trị cuối cùng của mỗi phần tử
-        const ua1 = ua[ua.length - 1];
-        const ub1 = ub[ub.length - 1];
-        const uc1 = uc[uc.length - 1];
-
-        // Kiểm tra xem biểu đồ tồn tại hay chưa , nếu tồn tại biều đồ cũ sẽ hủy nó và tạo biểu đồ mới 
-        if (this.mychart)
-        { this.mychart.destroy();
+        // Hủy Chart hiện tại (nếu có)
+        const chart = Chart.getChart('dtsu666_dienapphatoday');
+        if (chart) {
         }
 
 
         this.mychart = new Chart('dtsu666_dienapphatoday', {
-          type: 'bar',
+          type: 'line',
           data: {
-            //labels: Array.from({ length: 7 }, (_, i) => subDays(new Date(), i)).reverse().map(date => format(date, 'MMM dd')),
-            labels: ['Ua', 'Ub', 'Uc'],
-            datasets: [{
-              //barPercentage: 1,
-              categoryPercentage: 1,
-              barThickness: 40,
-              //maxBarThickness: 50,
-              minBarLength: 1.5,
-              label: 'Value',
-              data: [ua1, ub1, uc1],
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-              ],
-              borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-              ],
-              borderWidth: 1
-            }]
+            labels: date_ua.map(date => moment(date).format('HH:mm')),
+            datasets: [
+              {
+                label: 'Ua',
+                data: ua,
+                borderColor: 'red',
+                backgroundColor: 'red',
+                borderWidth: 0.8,
+                pointRadius: 0.8,
+                hidden: false,
+              },
+              {
+                label: 'Uatb',
+                data: avgArray_ua,
+                borderColor: 'red',
+                backgroundColor: 'red',
+                borderWidth: 1.5,
+                pointRadius: 0,
+                hidden: false,
+              },
+              {
+                label: 'Ub',
+                data: ub,
+                hidden: true,
+                borderColor: 'yellow',
+                backgroundColor: 'yellow',
+                borderWidth: 0.5,
+                pointRadius: 0.5,
+              },
+              {
+                label: 'Ubtb',
+                data: avgArray_ub,
+                hidden: true,
+                borderColor: 'yellow',
+                backgroundColor: 'yellow',
+                borderWidth: 1.5,
+                pointRadius: 0,
+              },
+              {
+                label: 'Uc',
+                data: uc,
+                hidden: true,
+                borderColor: 'green',
+                backgroundColor: 'green',
+                borderWidth: 0.5,
+                pointRadius: 0.5,
+              },
+              {
+                label: 'Uctb',
+                data: avgArray_uc,
+                hidden: true,
+                borderColor: 'green',
+                backgroundColor: 'green',
+                borderWidth: 1.5,
+                pointRadius: 0,
+              }
+            ]
           },
           options: {
-            maintainAspectRatio: false,
-            responsive: true,
-            aspectRatio: 1.5,
             plugins: {
               datalabels: {
-                color: '#cccccc',
-                display: true,
-                anchor: 'end',
-                align: 'top',
-                font: {
-                  size: 10
-                },
-                formatter: function (value) {
-                  return value + ' V';
-                }
+                display: false
               },
               subtitle: {
                 display: true,
@@ -106,20 +130,57 @@ export class Dtsu666UphatodayComponent implements OnInit {
                 color: 'white',
                 padding: {
                   top: 5,
-                  bottom: 20
+                  bottom: 0
                 }
               },
               legend: {
-              display: false
-              },
-            },
-          },
-          plugins: [ChartDataLabels]
-        });
-      }
-    )
-  }
+                display: true,
+                position: 'top',
+                align: 'end',
+                labels: {
+                  boxWidth: 10,
+                  boxHeight: 5,
 
+                },
+              },
+              decimation: {
+                enabled: false,
+                algorithm: 'min-max',
+              },
+              tooltip: {
+                enabled: true
+              }
+            },
+            scales: {
+              x: {
+                offset: true,
+                grid: {
+                  color: '#2d2b2b'
+                },
+                //ticks: {
+                //  font: {
+                //    size: 10
+                //  }
+                //}
+              },
+              y: {
+                display: true,
+                offset: true,
+                grid: {
+                  color: '#2d2b2b'
+                },
+
+
+              }
+
+            },
+
+          },
+
+        });
+
+      })
+  }
 }
 
 

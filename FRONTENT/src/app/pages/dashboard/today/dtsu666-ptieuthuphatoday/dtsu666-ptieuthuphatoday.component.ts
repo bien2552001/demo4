@@ -33,7 +33,13 @@ export class Dtsu666PtieuthuphatodayComponent implements OnInit {
         const pfb = this.dtsu666_ppha_today.map(data => data.Pfb);
         const pfc = this.dtsu666_ppha_today.map(data => data.Pfc);
         const date1 = this.dtsu666_ppha_today.map(data => data.Date);
-        
+
+        // Tính trung bình
+        const avgArray_ft = Array.from({ length: pft.length }, () => pft.reduce((acc, val) => acc + val) / pft.length);
+        const avgArray_fa = Array.from({ length: pfa.length }, () => pfa.reduce((acc, val) => acc + val) / pfa.length);
+        const avgArray_fb = Array.from({ length: pfb.length }, () => pfb.reduce((acc, val) => acc + val) / pfb.length);
+        const avgArray_fc = Array.from({ length: pfc.length }, () => pfc.reduce((acc, val) => acc + val) / pfc.length);
+
         // Hủy Chart hiện tại (nếu có)
         const chart = Chart.getChart('dtsu666_pphatoday');
         if (chart) {
@@ -47,36 +53,76 @@ export class Dtsu666PtieuthuphatodayComponent implements OnInit {
             labels: date1.map(date => moment(date).format('HH:mm')),
             datasets: [
               {
-                label: 'Pft',
+                label: 'Pt',
                 data: pft,
                 borderColor: 'red',
                 backgroundColor: 'red',
-                borderWidth: 0.5,
-                pointRadius: 0,
+                borderWidth: 0.8,
+                pointRadius: 0.8,
+                hidden: false,
               },
               {
-                label: 'Pfa',
+                label: 'Pttb',
+                data: avgArray_ft,
+                borderColor: 'red',
+                backgroundColor: 'red',
+                borderWidth: 1.5,
+                pointRadius: 0,
+                hidden: false,
+              },
+              {
+                label: 'Pa',
                 data: pfa,
                 borderColor: 'yellow',
                 backgroundColor: 'yellow',
-                borderWidth: 0.5,
-                pointRadius: 0,
+                borderWidth: 0.8,
+                pointRadius: 0.8,
+                hidden: true,
               },
               {
-                label: 'Pfb',
+                label: 'Patb',
+                data: avgArray_fa,
+                borderColor: 'yellow',
+                backgroundColor: 'yellow',
+                borderWidth: 1.5,
+                pointRadius: 0,
+                hidden: true,
+              },
+              {
+                label: 'Pb',
                 data: pfb,
                 borderColor: 'green',
                 backgroundColor: 'green',
-                borderWidth: 0.5,
-                pointRadius: 0,
+                borderWidth: 0.8,
+                pointRadius: 0.8,
+                hidden: true,
               },
               {
-                label: 'Pfc',
+                label: 'Pbtb',
+                data: avgArray_fb,
+                borderColor: 'green',
+                backgroundColor: 'green',
+                borderWidth: 1.5,
+                pointRadius: 0,
+                hidden: true,
+              },
+              {
+                label: 'Pc',
                 data: pfc,
                 borderColor: 'blue',
                 backgroundColor: 'blue',
-                borderWidth: 0.5,
+                borderWidth: 0.8,
+                pointRadius: 0.8,
+                hidden: true,
+              },
+              {
+                label: 'Pctb',
+                data: avgArray_fc,
+                borderColor: 'blue',
+                backgroundColor: 'blue',
+                borderWidth: 1.5,
                 pointRadius: 0,
+                hidden: true,
               }
             ]
           },
